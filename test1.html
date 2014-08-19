@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="underscore-min.js"></script>
+		<script type="text/javascript" src="backbone-min.js"></script>
+	</head>
+	<body>
+		aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>
+		aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>
+		aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>
+		aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>
+		aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>aaaa</br>
+	</body>
+	<script type="text/javascript">
+		var bacMain = function(){
+			var Sidebar = Backbone.Model.extend({
+			  promptColor: function() {
+			    var cssColor = prompt("Please enter a CSS color:");
+			    this.set({color: cssColor});
+			  }
+			});
+
+			window.sidebar = new Sidebar;
+
+			sidebar.on('change:color', function(model, color) {
+			  $('#sidebar').css({background: color});
+			});
+
+			sidebar.set({color: 'white'});
+
+			sidebar.promptColor();
+
+		};
+
+
+		(function($){
+			$(document).ready(function(){
+				console.log("start");
+				bacMain();
+				
+			});
+		})(jQuery);
+
+	</script>
+</html>
